@@ -1,0 +1,730 @@
+/* =========================================
+   1. СБРОС СТИЛЕЙ И БАЗОВЫЕ НАСТРОЙКИ
+   ========================================= */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #f5f5f5;
+  font-family: "Montserrat", sans-serif;
+  color: #333;
+  display: flex;
+  justify-content: center;
+  margin: 0;
+  padding: 0;
+}
+
+/* Контейнер имитирует экран телефона */
+.container {
+  width: 100%;
+  max-width: 480px;
+  background-color: #ffffff;
+  min-height: 100vh;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+  padding-bottom: 50px;
+}
+
+.section {
+  padding: 30px 20px;
+  text-align: center;
+}
+
+/* =========================================
+   2. БЛОК 1: ГЛАВНЫЙ ЭКРАН (HERO)
+   ========================================= */
+.hero-section {
+  position: relative;
+  background-color: #111;
+  padding: 0;
+  height: 100vh;
+  max-height: 850px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  overflow: hidden;
+}
+
+.hero-bg-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+}
+
+.hero-bg-image img {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+  object-position: center 20%;
+}
+
+.hero-bg-image::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.3);
+  z-index: 2;
+}
+
+.hero-content {
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 3;
+  width: 100%;
+  padding: 0 20px;
+  text-align: center;
+  color: #fff;
+  text-shadow: 0px 4px 15px rgba(0, 0, 0, 0.8);
+}
+
+.subtitle-top {
+  font-family: "Cormorant Infant", serif;
+  font-size: 16px;
+  letter-spacing: 4px;
+  margin-bottom: 5px;
+  font-weight: 600;
+  position: relative;
+  top: -20px;
+}
+
+.main-title {
+  font-family: "Great Vibes", cursive; /* Рукописный шрифт */
+  font-size: 52px; /* Чуть увеличили для красоты */
+  font-style: normal;
+  font-weight: 400;
+  line-height: 1.1;
+  margin-top: 10px;
+}
+
+/* Анимированная стрелка вниз */
+.scroll-down {
+  position: absolute;
+  bottom: 40px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 3;
+  color: #fff;
+  font-size: 24px;
+  cursor: pointer;
+  animation: bounce 2s infinite;
+}
+
+@keyframes bounce {
+  0%,
+  20%,
+  50%,
+  80%,
+  100% {
+    transform: translateY(0) translateX(-50%);
+  }
+  40% {
+    transform: translateY(-15px) translateX(-50%);
+  }
+  60% {
+    transform: translateY(-7px) translateX(-50%);
+  }
+}
+
+/* =========================================
+   3. РАЗДЕЛИТЕЛЬ (УЗОРЫ + СТРЕЛКА)
+   ========================================= */
+.vintage-divider {
+  background-color: #fff;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 30px 10px;
+  overflow: hidden;
+}
+
+.divider-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  max-width: 380px;
+  margin-bottom: 15px;
+  flex-wrap: nowrap;
+}
+
+.bottom-row {
+  max-width: 200px;
+  margin-bottom: 0;
+  justify-content: center; /* Центрируем нижнюю картинку */
+}
+
+.ornament-img {
+  width: 42%;
+  height: 25px;
+  object-fit: contain;
+  flex-shrink: 0;
+}
+
+.bottom-row .ornament-img {
+  width: 100%;
+  height: 25px;
+  object-fit: contain;
+}
+
+/* Стрелка */
+.custom-arrow {
+  display: flex;
+  margin: 0 10px;
+  position: relative;
+  width: 30px;
+  height: 20px;
+  flex-shrink: 0;
+  justify-content: center;
+  align-items: center;
+}
+
+.custom-arrow span {
+  position: absolute;
+  width: 12px;
+  height: 12px;
+  border-top: 4px solid #111;
+  border-right: 4px solid #111;
+  transform: rotate(45deg);
+}
+
+.custom-arrow span:nth-child(1) {
+  left: 0px;
+}
+.custom-arrow span:nth-child(2) {
+  left: 7px;
+}
+
+/* =========================================
+   4. БЛОК 2: ФОТО С ШАРАМИ
+   ========================================= */
+.photo-section {
+  padding-top: 10px;
+  padding-bottom: 0;
+}
+
+.image-placeholder {
+  width: 100%;
+  height: 450px;
+  background-color: #eee;
+  border-radius: 0;
+  overflow: hidden;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.image-placeholder img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 2;
+}
+
+.placeholder-text {
+  color: #666;
+  font-size: 14px;
+  position: relative;
+  z-index: 1;
+}
+
+.script-title {
+  font-family: "Great Vibes", cursive;
+  font-size: 46px;
+  font-style: normal;
+  font-weight: 400;
+  margin: 20px 0 10px 0;
+  color: #111;
+}
+
+/* Сургучная печать */
+.wax-seal {
+  width: 85px;
+  height: 85px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 10px auto 0 auto;
+}
+
+.wax-seal img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  /* Убрали border-radius и box-shadow, чтобы не было белого круга/тени */
+  background-color: transparent; /* Гарантируем прозрачность */
+}
+
+/* =========================================
+   5. БЛОК 3: ТЕКСТ ПРИГЛАШЕНИЯ И КАЛЕНДАРЬ
+   ========================================= */
+.text-section {
+  padding: 0 20px 40px 20px;
+}
+
+.main-invite-text {
+  font-family: "Cormorant Infant", serif;
+  font-size: 20px;
+  line-height: 1.5;
+  margin-top: 5px;
+  margin-bottom: 25px;
+  color: #222;
+  text-align: center;
+  font-style: italic;
+}
+
+.invite-details {
+  background-color: #faf8f5;
+  border: 1px solid #e8e0d5;
+  border-radius: 12px;
+  padding: 20px 15px;
+  margin-bottom: 30px;
+  display: inline-block;
+  width: 100%;
+}
+
+.detail-line {
+  font-family: "Montserrat", sans-serif;
+  font-size: 14px;
+  color: #444;
+  line-height: 1.6;
+  margin-bottom: 10px;
+  display: flex;
+  align-items: flex-start;
+  text-align: left;
+}
+
+.detail-line:last-child {
+  margin-bottom: 0;
+}
+.detail-line .icon {
+  margin-right: 10px;
+  font-size: 16px;
+  line-height: 1.4;
+}
+
+.waiting-text {
+  font-family: "Cormorant Infant", serif;
+  font-size: 24px;
+  font-weight: 600;
+  color: #7b1a1a;
+  margin-bottom: 25px;
+  letter-spacing: 1px;
+}
+
+.stars-decor {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  margin-bottom: 20px;
+  font-size: 12px;
+  color: #333;
+}
+
+/* Календарь */
+.month-title {
+  font-family: "Cormorant Infant", serif;
+  font-size: 40px;
+  font-weight: 400;
+  margin-bottom: 20px;
+  letter-spacing: 2px;
+  text-align: center;
+}
+
+.calendar {
+  max-width: 300px;
+  margin: 0 auto 20px auto;
+}
+
+.cal-header {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  font-size: 12px;
+  color: #888;
+  margin-bottom: 10px;
+  letter-spacing: 1px;
+  text-align: center;
+}
+
+.cal-days {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 20px 10px;
+  font-size: 14px;
+}
+
+.cal-days span {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 45px;
+}
+
+.highlight-day {
+  color: #7b1a1a;
+  font-weight: bold;
+  position: relative;
+  z-index: 2;
+}
+
+.highlight-day::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 75px;
+  height: 75px;
+  background-image: url("heart.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  z-index: -1;
+}
+
+.year {
+  font-size: 16px;
+  letter-spacing: 2px;
+  margin-top: 20px;
+  text-align: center;
+}
+
+/* =========================================
+   6. БЛОК 4: ДЕТАЛИ (ВРЕМЯ, МЕСТО, ДРЕСС-КОД)
+   ========================================= */
+/* Разделитель-картинка */
+.ornament-divider {
+  text-align: center;
+  margin: 10px 0 30px 0;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.ornament-divider img {
+  width: 85%;
+  max-width: 350px;
+  height: auto;
+  display: block;
+}
+
+.details-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Таймер */
+.timer-container {
+  margin-bottom: 40px;
+  width: 100%;
+  background: #fafafa;
+  padding: 20px;
+  border-radius: 15px;
+  border: 1px solid #eee;
+}
+
+.timer-title {
+  font-size: 14px;
+  margin-bottom: 15px;
+  color: #555;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.countdown {
+  display: flex;
+  justify-content: space-around;
+}
+.time-box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.time-box span {
+  font-family: "Cormorant Infant", serif;
+  font-size: 32px;
+  font-weight: 600;
+  color: #111;
+}
+.time-box p {
+  font-size: 10px;
+  color: #888;
+  text-transform: uppercase;
+  margin-top: 5px;
+}
+
+/* Иконки деталей */
+.detail-item {
+  margin-bottom: 40px;
+  width: 100%;
+}
+
+/* Настройка отдельных иконок */
+.icon-time,
+.icon-place,
+.icon-dress {
+  display: block;
+  margin: 0 auto 5px auto;
+  object-fit: contain;
+}
+
+.icon-time {
+  width: 130px;
+  height: 130px;
+}
+.icon-place {
+  width: 130px;
+  height: 130px;
+}
+/* Размер для иконки ВЕШАЛКИ (Дресс-код) */
+.icon-dress {
+  width: 160px;
+  height: auto;
+  max-width: 100%; /* Защита от вылезания за края экрана */
+  margin-bottom: 5px;
+}
+
+.detail-item h3 {
+  font-family: "Montserrat", sans-serif;
+  font-size: 18px;
+  font-weight: 600;
+  margin-top: 0px;
+  margin-bottom: 5px;
+}
+
+.detail-item p {
+  font-size: 16px;
+  color: #444;
+  line-height: 1.5;
+}
+
+/* Кнопка карты */
+.map-button {
+  display: inline-block;
+  margin-top: 15px;
+  padding: 12px 24px;
+  background-color: #000;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 25px;
+  font-size: 14px;
+  transition: background 0.3s;
+}
+
+.map-button:hover {
+  background-color: #333;
+}
+.map-button i {
+  margin-right: 8px;
+}
+
+/* Финальный блок */
+.final-message-box {
+  margin: 40px auto 30px auto;
+  padding: 25px 20px;
+  border: 1px solid #e0d6c8;
+  border-radius: 15px;
+  background-color: #fcfbf9;
+  max-width: 320px;
+  text-align: center;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.03);
+}
+
+.final-script {
+  font-family: "Great Vibes", cursive;
+  font-size: 36px;
+  color: #7b1a1a;
+  margin: 0 0 10px 0;
+  line-height: 1.2;
+}
+
+.final-text {
+  font-family: "Montserrat", sans-serif;
+  font-size: 13px;
+  color: #777;
+  line-height: 1.5;
+  margin: 0;
+}
+
+/* =========================================
+   7. БЛОК С WHATSAPP
+   ========================================= */
+.whatsapp-block {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  margin: 30px 0 50px 0;
+  text-align: center;
+}
+
+.whatsapp-link {
+  text-decoration: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: transform 0.3s ease;
+  margin: 0 auto;
+}
+
+.whatsapp-link:hover {
+  transform: scale(1.1);
+}
+
+.whatsapp-image {
+  width: 100px;
+  height: auto;
+  display: block;
+  margin: 0 auto;
+}
+
+.whatsapp-hint {
+  font-family: "Montserrat", sans-serif;
+  font-size: 14px;
+  color: #888;
+  margin-top: 15px;
+  text-align: center;
+  width: 100%;
+  letter-spacing: 1px;
+}
+
+/* =========================================
+   8. ЭКРАН ПРИВЕТСТВИЯ (КОНВЕРТ)
+   ========================================= */
+#welcome-screen {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: #f7f5f2;
+  background-image: radial-gradient(circle at center, #ffffff 0%, #f0ebe1 100%);
+  z-index: 9999;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  transition:
+    opacity 1s ease,
+    transform 1s ease;
+}
+
+.envelope-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  animation: float 3s ease-in-out infinite;
+}
+
+.envelope {
+  position: relative;
+  width: 280px;
+  height: 180px;
+  background-color: #fdfcfb;
+  border-radius: 8px;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+  perspective: 1000px;
+}
+
+.flap {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0;
+  height: 0;
+  border-left: 140px solid transparent;
+  border-right: 140px solid transparent;
+  border-top: 100px solid #f0ebe1;
+  z-index: 4;
+  transform-origin: top;
+  transition: transform 0.8s ease-in-out;
+  border-radius: 8px 8px 0 0;
+}
+
+.pocket {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #fdfcfb;
+  border-radius: 8px;
+  z-index: 3;
+  border-bottom: 90px solid #f9f7f4;
+  border-left: 140px solid transparent;
+  border-right: 140px solid transparent;
+  box-sizing: border-box;
+}
+
+.seal {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 50px;
+  height: 50px;
+  background-color: #7b1a1a;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #e8baba;
+  font-size: 20px;
+  z-index: 5;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  transition: opacity 0.4s ease;
+}
+
+.welcome-text {
+  font-family: "Cormorant Infant", serif;
+  font-size: 16px;
+  color: #b0a597;
+  letter-spacing: 2px;
+  margin-top: 40px;
+  text-transform: lowercase;
+}
+
+/* Анимации */
+@keyframes float {
+  0% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
+}
+
+/* Классы для запуска анимации при клике (через JS) */
+.open-flap .flap {
+  transform: rotateX(180deg);
+  z-index: 2;
+}
+.open-flap .seal {
+  opacity: 0;
+}
+.open-screen {
+  transform: translateY(-100%);
+  opacity: 0;
+}

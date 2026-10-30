@@ -1,0 +1,261 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Madina's birthday</title>
+    <link rel="stylesheet" href="style.css" />
+    <!-- Подключение шрифтов -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <!-- Подключение шрифтов -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <!-- Твой старый шрифт -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Infant:ital,wght@0,400;0,600;1,400&family=Montserrat:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
+    <!-- НОВЫЙ РУКОПИСНЫЙ ШРИФТ -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Infant:ital,wght@0,400;0,600;1,400&family=Montserrat:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
+    <!-- Иконки -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+  </head>
+  <body>
+    <!-- Экран приветствия (Конверт) -->
+    <div id="welcome-screen">
+      <div class="envelope-wrapper" id="envelope">
+        <!-- Сам конверт -->
+        <div class="envelope">
+          <!-- Верхний клапан, который будет открываться -->
+          <div class="flap"></div>
+
+          <!-- Тело конверта (лицевая сторона) -->
+          <div class="pocket"></div>
+
+          <!-- Печать с сердечком по центру -->
+          <div class="seal">
+            <i class="fa-solid fa-heart"></i>
+          </div>
+        </div>
+
+        <p class="welcome-text">нажми, чтобы открыть</p>
+      </div>
+      <!-- Фоновая музыка -->
+      <audio id="bg-music" loop>
+        <source src="song.mp3" type="audio/mpeg" />
+      </audio>
+    </div>
+    <div class="container">
+      <!-- Блок 1: Обложка -->
+      <section class="section hero-section">
+        <div class="hero-bg-image">
+          <!-- Твоя фотография -->
+          <img
+            src="photo1.jpeg"
+            alt="Madina"
+            onerror="this.style.display = 'none'"
+          />
+        </div>
+
+        <div class="hero-content">
+          <p class="subtitle-top">BIRTHDAY PARTY</p>
+          <h1 class="main-title">Madina's Birthday</h1>
+        </div>
+
+        <!-- НОВАЯ СТРЕЛКА ВНИЗ -->
+        <div class="scroll-down">
+          <i class="fa-solid fa-chevron-down"></i>
+        </div>
+      </section>
+      <!-- Разделитель из трех картинок + стрелка -->
+      <div class="vintage-divider">
+        <!-- Верхний ряд -->
+        <div class="divider-row">
+          <!-- Левая картинка -->
+          <img src="divider.png" class="ornament-img" alt="узор" />
+
+          <!-- Стрелка по центру -->
+          <div class="custom-arrow">
+            <span></span>
+            <span></span>
+          </div>
+
+          <!-- Правая картинка -->
+          <img src="divider.png" class="ornament-img" alt="узор" />
+        </div>
+
+        <!-- Нижняя картинка (по центру) -->
+        <div class="divider-row bottom-row">
+          <img src="divider.png" class="ornament-img" alt="узор" />
+        </div>
+      </div>
+      <!-- Блок 2: Фото с шарами -->
+      <section class="section photo-section">
+        <div class="image-placeholder">
+          <!-- Вставь сюда вторую фотографию -->
+          <img
+            src="photo2.jpeg"
+            alt="Madina"
+            onerror="this.style.display = 'none'"
+          />
+          <span class="placeholder-text">Здесь будет твое фото 2</span>
+        </div>
+        <h2 class="script-title">Birthday party!!!</h2>
+        <div class="wax-seal">
+          <img src="black.png" alt="Печать" />
+        </div>
+      </section>
+
+      <!-- Блок 3: Текст приглашения -->
+      <section class="section text-section">
+        <p class="main-invite-text">
+          Приглашаю вас на своё день рождения! Хочу провести этот прекрасный
+          вечер в кругу самых любимых и близких, ведь именно с вами мой праздник
+          станет еще ярче!🌟
+        </p>
+
+        <!-- Красиво оформленный список -->
+        <div class="invite-details">
+          <p class="detail-line">
+            <span class="icon">✨</span> С вас классное настроение и
+            пунктуальность
+          </p>
+          <p class="detail-line">
+            <span class="icon">✨</span> С меня классная атмосфера и вкусный
+            стол
+          </p>
+        </div>
+
+        <p class="waiting-text">Очень жду !🫶🏻</p>
+
+        <h2 class="month-title">November</h2>
+
+        <!-- Календарь -->
+        <div class="calendar">
+          <div class="cal-header">
+            <span>M</span><span>TU</span><span>W</span><span>TH</span
+            ><span>F</span><span>SA</span><span>SU</span>
+          </div>
+          <div class="cal-days">
+            <!-- Пустые дни для выравнивания (Ноябрь 2026 начинается с воскресенья) -->
+            <span></span><span></span><span></span><span></span><span></span
+            ><span></span>
+            <span>1</span>
+            <span>2</span>
+            <span class="highlight-day">3</span>
+            <span>4</span><span>5</span><span>6</span><span>7</span
+            ><span>8</span><span>9</span><span>10</span> <span>11</span
+            ><span>12</span><span>13</span><span>14</span><span>15</span
+            ><span>16</span><span>17</span> <span>18</span><span>19</span
+            ><span>20</span><span>21</span><span>22</span><span>23</span
+            ><span>24</span> <span>25</span><span>26</span><span>27</span
+            ><span>28</span><span>29</span><span>30</span>
+          </div>
+        </div>
+        <p class="year">2026</p>
+      </section>
+
+      <!-- Винтажный разделитель-картинка -->
+      <div class="ornament-divider">
+        <img
+          src="divider.png"
+          alt="Узор"
+          onerror="this.style.display = 'none'"
+        />
+      </div>
+
+      <!-- Блок 4: Время и Место -->
+      <section class="section details-section">
+        <!-- Таймер -->
+        <div class="timer-container">
+          <p class="timer-title">До праздника осталось:</p>
+          <div id="countdown" class="countdown">
+            <div class="time-box">
+              <span id="days">00</span>
+              <p>дней</p>
+            </div>
+            <div class="time-box">
+              <span id="hours">00</span>
+              <p>часов</p>
+            </div>
+            <div class="time-box">
+              <span id="minutes">00</span>
+              <p>минут</p>
+            </div>
+            <div class="time-box">
+              <span id="seconds">00</span>
+              <p>секунд</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Время -->
+        <div class="detail-item">
+          <!-- Добавили класс icon-time -->
+          <img src="icon-time.png" class="icon-time" alt="Время" />
+          <h3>Время</h3>
+          <p>18:00</p>
+        </div>
+
+        <!-- Место -->
+        <div class="detail-item">
+          <!-- Добавили класс icon-place -->
+          <img src="icon-place.png" class="icon-place" alt="Место" />
+          <h3>Место</h3>
+          <p>Город Бишкек<br />Проспект Победы 327<br />Ресторан "Дияр"</p>
+          <a
+            href="https://2gis.kg/bishkek/geo/70000001019356620?inv_by=3bc20e605bb5499a8e3da1e06d542d30&inv_ts=1793361756"
+            target="_blank"
+            class="map-button"
+          >
+            <i class="fa-solid fa-map-location-dot"></i> Открыть в 2ГИС
+          </a>
+        </div>
+
+        <!-- Дресс-код -->
+        <div class="detail-item">
+          <!-- Добавили класс icon-dress -->
+          <img src="icon-dress.png" class="icon-dress" alt="Дресс-код" />
+          <h3>Дресс-код</h3>
+          <p>Платье.</p>
+        </div>
+
+        <!-- Красивый финальный блок -->
+        <div class="final-message-box">
+          <p class="final-script">До встречи на празднике!</p>
+          <p class="final-text">
+            Ваши улыбки — лучший подарок для меня. Жду вас!
+          </p>
+        </div>
+
+        <!-- Фото-ссылка на WhatsApp -->
+        <div class="whatsapp-photo-container">
+          <a
+            href="https://chat.whatsapp.com/J7WxQsMAY3O6bk4zoCYM8j?s=sw&p=i&mlu=4&ilr=4&iam=2"
+            target="_blank"
+          >
+            <img
+              src="whatsapp.png"
+              alt="Написать в WhatsApp"
+              class="whatsapp-image"
+            />
+          </a>
+          <p class="whatsapp-hint">Тыкни на самолетик ✈️</p>
+        </div>
+      </section>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>

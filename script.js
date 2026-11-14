@@ -40,7 +40,7 @@ document.addEventListener("DOMContentLoaded", function () {
 // ==========================================
 // Устанавливаем дату события: 3 ноября 2026 года, 18:00
 // Формат: 'YYYY-MM-DDTHH:mm:ss'
-const eventDate = new Date("2026-11-03T18:00:00").getTime();
+const eventDate = new Date("2026-11-20T18:00:00").getTime();
 
 // Обновляем таймер каждую секунду
 const timer = setInterval(function () {
